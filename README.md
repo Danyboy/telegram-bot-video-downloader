@@ -1,6 +1,6 @@
-# telegram-bot-youtube-downloader
+# telegram-bot-video-downloader
 
-### This bot is old and not efficient, this repository will be archived.
+## About
 
 Change TOKEN with your token 
 
@@ -10,6 +10,7 @@ Usage:
       - If the video is larger than 50MB, it is split into smaller parts, 
         which then need to be concatenated (in linux: cat vid.mp4* > vid.mp4)
 
+## How to install
 This script require:
   - Python3 interpreter
   - Telegram python api https://github.com/python-telegram-bot/python-telegram-bot
@@ -20,18 +21,9 @@ apt install -y python3-pip python3 yt-dlp
 pip3 install -r requirements.txt
 ```
 
-Tips:
-  - Use PythonAnyWhere for hosting the bot https://www.pythonanywhere.com
+## How to start
 
-## TODO
-  - Improve space-requirement of hard-split (is 2 times size_of_video, the goal is size_of_video + 49MB)
-  - Improve soft-split of the videos
-  - PEP8
-  - Remove duplicates of resolution
-  - Add geo-bypass feature
-  - Add playlist download feature
-    - match title with regex
-    - from video x to video y
-    - only video uploaded before or after date x
-    - max-views or min-views
-  - Subtitle download
+```
+screen
+TELEGRAM_TOKEN="telegram_token" python3 main.py
+```
