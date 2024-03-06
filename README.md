@@ -15,6 +15,11 @@ This script require:
   - Telegram python api https://github.com/python-telegram-bot/python-telegram-bot
   - yt-dlp https://github.com/yt-dlp/yt-dlp (installed on the machine)
 
+```
+apt install -y python3-pip python3 yt-dlp
+pip3 install -r requirements.txt
+```
+
 Tips:
   - Use PythonAnyWhere for hosting the bot https://www.pythonanywhere.com
 
