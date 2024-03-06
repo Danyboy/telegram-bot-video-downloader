@@ -23,7 +23,7 @@ class Video:
     def get_formats(self):
         formats = []
 
-        cmd = "youtube-dl -F {}".format(self.link)
+        cmd = "yt-dlp -F {}".format(self.link)
         p = Popen(cmd, shell=True, stdout=PIPE, stderr=PIPE).communicate()
         it = iter(str(p[0], 'utf-8').split('\n')) # iterator of output lines
 
@@ -56,7 +56,7 @@ class Video:
         return kb
 
     def download(self, resolution_code):
-        cmd = "youtube-dl -f {0} {1}".format(resolution_code, self.link)
+        cmd = "yt-dlp -f {0} {1}".format(resolution_code, self.link)
         p = Popen(cmd, shell=True, stdout=PIPE, stderr=PIPE).communicate()
 
         for line in str(p[0], 'utf-8').split('\n'):

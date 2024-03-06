@@ -13,12 +13,10 @@ Usage:
 This script require:
   - Python3 interpreter
   - Telegram python api https://github.com/python-telegram-bot/python-telegram-bot
-  - youtube-dl https://github.com/rg3/youtube-dl/ (installed on the machine)
+  - yt-dlp https://github.com/yt-dlp/yt-dlp (installed on the machine)
 
 Tips:
   - Use PythonAnyWhere for hosting the bot https://www.pythonanywhere.com
-
-
 
 ## TODO
   - Improve space-requirement of hard-split (is 2 times size_of_video, the goal is size_of_video + 49MB)

@@ -1,0 +1,33 @@
+[Unit]
+Description=telegram-bot-video-downloader bot service
+ConditionPathExists=/usr/share/telegram-bot-video-downloader
+After=network.target
+ 
+[Service]
+Type=simple
+User=telegram-bot-video-downloaderservice
+Group=telegram-bot-video-downloaderservice
+LimitNOFILE=1024
+
+Restart=on-failure
+RestartSec=10
+startLimitIntervalSec=60
+
+WorkingDirectory=/usr/share/telegram-bot-video-downloader/
+ExecStart=/usr/bin/telegram-bot-video-downloader
+
+# make sure log directory and user exists and owned by syslog
+# sudo useradd telegram-bot-video-downloaderservice -s /sbin/nologin -M
+PermissionsStartOnly=true
+ExecStartPre=/bin/mkdir -p /var/log/telegram-bot-video-downloader
+ExecStartPre=/bin/chown telegram-bot-video-downloaderservice:root /var/log/telegram-bot-video-downloader
+ExecStartPre=/bin/chmod 755 /var/log/telegram-bot-video-downloader
+ExecStartPre=/bin/mkdir -p /tmp/telegram-bot-video-downloader/
+ExecStartPre=/bin/chown telegram-bot-video-downloaderservice:root /tmp/telegram-bot-video-downloader
+ExecStartPre=/bin/chmod 755 /tmp/telegram-bot-video-downloader
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=telegram-bot-video-downloaderservice
+ 
+[Install]
+WantedBy=multi-user.target
